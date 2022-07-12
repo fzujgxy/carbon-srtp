@@ -11,7 +11,9 @@ from sklearn.linear_model import LassoCV
 #
 # @ignore_warnings(category=ConvergenceWarning)
 # def lassoStep(request):
-x_value = pd.read_excel("D:/s072007124Python/SRTP/now.xlsx")
+# D:/s072007124Python/SRTP/now.xlsx
+excelPath=input('请输入文件路径')
+x_value = pd.read_excel(excelPath)
 # x_value.shape[0] 获取行数,即有几年
 # x_value.shape[1] 获取列数,即有几个指标
 x = pd.DataFrame(x_value.iloc[:, 0:x_value.shape[1] - 1])
