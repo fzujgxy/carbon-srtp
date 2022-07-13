@@ -4,13 +4,16 @@
         style="width:200px;min-height: calc(100vh - 50px)"
         default-active="2"
         class="el-menu-vertical-demo">
+
       <el-menu-item index="2">
         <i class="el-icon-menu"></i>
         <template #title>Lasso回归分析</template>
       </el-menu-item>
+
       <el-menu-item index="4">
         <i class="el-icon-setting"></i>
         <template #title>置信规则库分析</template>
+
       </el-menu-item>
     </el-menu>
   </div>
