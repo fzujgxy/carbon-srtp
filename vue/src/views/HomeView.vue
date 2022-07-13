@@ -14,7 +14,7 @@
 
 
     <div style="margin:10px 0">
-      <el-button type="primary">运行</el-button>
+      <el-button type="primary" @click="add">运行</el-button>
     </div>
 
 
@@ -26,6 +26,10 @@
 export default {
   name: 'HomeView',
   components: {
+  }
+
+  methods:{
+
   }
 }
 </script>
