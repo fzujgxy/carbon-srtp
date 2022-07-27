@@ -1,16 +1,32 @@
-import csv, io
+import os
+
+from django.conf import settings
+from django.http import response
 from django.shortcuts import render, HttpResponse
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import Ridge, LinearRegression, Lasso
+from requests import Response
+
+from sklearn.linear_model import LinearRegression, Lasso
 from sklearn.model_selection import train_test_split as TTS
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LassoCV
 
-def lassoStep(request):
+from rest_framework.views import APIView
+from backends import settings
+from django.shortcuts import render, redirect, HttpResponse
+from django.http import JsonResponse
+from rest_framework import status
+import os
+import uuid
+
+
+def runlasso(Request):
+    # def lassoStep(path):
     # D:/s072007124Python/SRTP/now.xlsx
-    #     excelPath=input('请输入文件路径')
-    x_value = pd.read_excel('D:/s072007124Python/SRTP/now.xlsx')
+    # excelPath=input('请输入文件路径')
+    excelPath = 'D:/SRTP/carbon-srtp/Java/data/datas.xlsx'
+    x_value = pd.read_excel(excelPath)
     # x_value.shape[0] 获取行数,即有几年
     # x_value.shape[1] 获取列数,即有几个指标
     x = pd.DataFrame(x_value.iloc[:, 0:x_value.shape[1] - 1])
@@ -75,4 +91,11 @@ def lassoStep(request):
         if lasso_.coef_[i] != 0:
             result.append(x_value.columns.values[i])
     print('有关的为:', result)
-    return HttpResponse(result)
+
+    # res = []
+    # for j in range(len(result)):
+    #     res.append(result[j])
+    #     if (j < len(result) - 1):
+    #         res.append(",")
+
+    return JsonResponse(result, safe=False)

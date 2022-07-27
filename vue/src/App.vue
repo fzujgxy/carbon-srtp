@@ -1,4 +1,5 @@
 <template>
+
   <div>
 <!--    头部-->
     <Header/>
@@ -13,9 +14,10 @@
   </div>
 
 </template>
+<!--  <style scoped>-->
+<!--    @import url("//unpkg.com/element-ui@2.15.6/lib/theme-chalk/index.css")-->
+<!--  </style>-->
 
-<style>
-</style>
 
 <script>
 import Header from "@/components/Header";
@@ -26,6 +28,7 @@ export default {
   components:{
     Header,
     Aside
+
   }
 }
 </script>
