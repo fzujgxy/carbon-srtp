@@ -9,6 +9,7 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
+
     @Select("select * from user where phone = #{phone}")
     List<User> samePhone(String phone);
 }

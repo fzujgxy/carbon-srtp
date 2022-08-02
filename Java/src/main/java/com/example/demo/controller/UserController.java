@@ -25,11 +25,12 @@ public class UserController {
 
     @PostMapping("/register")
     public Result save(@RequestBody User user){
-        if(userMapper.samePhone(user.getPhone()) !=null){
+        if(userMapper.samePhone(user.getPhone()).size() != 0){
             return Result.error("400","此手机号已被注册");
         }else{
-        userMapper.insert(user);
-        return Result.success();}
+            userMapper.insert(user);
+            return Result.success();
+        }
     }
 
     @PostMapping("/login")

@@ -28,11 +28,13 @@
 <script>
 
 import axios from "axios";
+import request from "@/utils/request";
 
 
 export default {
   data(){
     return{
+      reslut:{},
     }
   },
 
@@ -45,6 +47,12 @@ export default {
         alert(response.data)
       })
     },
+  // methods:{
+  //   run(){
+  //     request.get("http://localhost:8000/lasso",this.result).then(res =>{
+  //       alert(res.data)
+  //         })
+  //   },
   },
 }
 </script>

@@ -91,5 +91,4 @@ def runlasso(Request):
         if lasso_.coef_[i] != 0:
             result.append(x_value.columns.values[i])
 
-
     return JsonResponse(result, safe=False)
