@@ -47,7 +47,7 @@ export default {
              type:"success",
              message:"登陆成功"
             })
-            this.$router.push("/home") //登录成功之后页面跳转至home
+            this.$router.push("/lasso") //登录成功之后页面跳转至lasso
           }else {
            this.$message({
               type: "error",

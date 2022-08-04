@@ -14,22 +14,30 @@ const routes = [
 
   },
   {
-    path:'/home',
-    name:'Home',
+    path:'/lasso',
+    name:'Lasso',
     component:Layout,
     children:[{
-      path:"/home",
-      name:'Home',
-      component:() => import("@/views/Home"),
+      path:"/lasso",
+      name:'Lasso',
+      component:() => import("@/views/Lasso"),
+    },
 
-    }]
+    {
+      path:"/ebrb",
+      name:'Ebrb',
+      component:() => import("@/views/Ebrb"),
+    }
+    ]
   },
   {
     path:'/register',
     name:'Register',
     component:() => import("@/views/Register"),
 
-  }
+  },
+
+
 ]
 
 const router = createRouter({
