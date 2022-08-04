@@ -27,9 +27,13 @@
 
 
   <el-steps :active="active" align-center style="margin-top:10px">
+
+    <el-step title="最优alpha图"/>
     <el-step title="自动生成的alpha取值"/>
     <el-step title="Lasso回归分析评分"/>
     <el-step title="相关系数"/>
+
+
   </el-steps>
   <el-button @click="next">Next step</el-button>
 
@@ -44,6 +48,7 @@
       <div v-if="stepOneVif">自动生成的alpha取值为:{{result1}}</div>
       <div v-if="stepTwoVif">Lasso回归分析评分:{{result2}}</div>
       <div v-if="stepThreeVif">相关系数:{{result3}}</div>
+      <el-image v-if="stepPicVif" style="width:35%" :src="url"/>
 
 
 
@@ -76,6 +81,7 @@ export default {
       stepOneVif:false,
       stepTwoVif:false,
       stepThreeVif:false,
+      stepPicVif:false,
     }
   },
 
@@ -89,7 +95,8 @@ export default {
           this.result2=response.data[1]
           this.result3=response.data[2]
         if(this.active==0){
-          this.stepOneVif=true
+          this.stepThreeVif=false
+          this.stepPicVif=true
         }
 
 
@@ -100,21 +107,29 @@ export default {
 
     next(){
       this.active++
-      if (this.active > 2) this.active = 0
+      if (this.active > 3) this.active = 0
 
       if(this.active==0){
-          this.stepOneVif=true
+          this.stepThreeVif=false
+          this.stepPicVif=true
         }
 
       if(this.active==1){
+          this.stepPicVif=false
+          this.stepOneVif=true
+        }
+
+      if(this.active==2){
           this.stepOneVif=false
           this.stepTwoVif=true
         }
 
-      if(this.active==2){
+      if(this.active==3){
           this.stepTwoVif=false
           this.stepThreeVif=true
         }
+
+
       },
   }
 }
