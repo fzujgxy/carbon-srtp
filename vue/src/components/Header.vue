@@ -1,13 +1,15 @@
 <template>
-  <div style="height:50px;line-height: 50px;border-bottom: 1px solid #ccc;display: flex">
-  <div style="width: 200px;padding-left: 30px;font-weight: bold;color: dodgerblue">FzuJGXY</div>
+  <div style="height:50px;line-height: 50px;border-bottom:1px solid #ccc;display:flex">
+  <div style="width: 200px;font-weight: bold;color: dodgerblue;font-size:25px">FzuJGXY</div>
+  <el-image :src="url"/>
+
   <div style="flex: 1"></div>
 
     <!--下拉框-->
-    <div style="width:100px;text-align: center">
+    <div style="width:80px;text-align: center">
 
       <el-dropdown>
-      <el-button type="primary" size="large">张三<el-icon class="el-icon--right"><arrow-down /></el-icon>
+      <el-button type="primary" size="large">HarryGao<el-icon class="el-icon--right"><arrow-down /></el-icon>
       </el-button>
       <template #dropdown>
         <el-dropdown-menu>
@@ -29,29 +31,10 @@ export default {
   name: "Head",
   data(){
     return {
-      register_form:{},
-      register_dialogVisible:false,
-
+      url:'http://localhost:9090/picture/logo.jpg',
     }
   },
-  methods:{
-
-    login_add(){
-      this.login_dialogVisible = true
-      this.login_form = {}
-    },
-    register_add(){
-      this.register_dialogVisible = true
-      this.register_form = {}
-    },
-    save(){
-      request.post("http://localhost:9090/user/register",this.form).then(res =>{
-        console.log(res)
-      })
-      this.register_dialogVisible = false
-      alert("注册成功")
-    },
-  }
+  methods: {}
 }
 </script>
 
