@@ -7,7 +7,14 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @program: Java
+ * @author: HarryGao
+ * @create: 2022-08-09 03:12
+ */
+
 @Configuration
+@MapperScan("com.example.demo.mapper")
 public class MybatisPlusConfig {
 
     @Bean

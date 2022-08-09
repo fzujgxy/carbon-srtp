@@ -27,7 +27,13 @@ const routes = [
       path:"/ebrb",
       name:'Ebrb',
       component:() => import("@/views/Ebrb"),
-    }
+    },
+
+    {
+        path:'/backends',
+      name:'Backends',
+      component:() => import("@/views/Backends"),
+      }
     ]
   },
   {
@@ -36,7 +42,6 @@ const routes = [
     component:() => import("@/views/Register"),
 
   },
-
 
 ]
 

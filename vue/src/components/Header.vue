@@ -6,7 +6,7 @@
   <div style="flex: 1"></div>
 
     <!--下拉框-->
-    <div style="width:80px;text-align: center">
+    <div style="width:auto;text-align: center">
 
       <el-dropdown>
       <el-button type="primary" size="large">HarryGao<el-icon class="el-icon--right"><arrow-down /></el-icon>

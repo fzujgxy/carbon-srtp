@@ -10,6 +10,10 @@ spring:
   http:
     multipart:
       location:/data/upload_tmp
+#  security:
+#    user:
+#      name: admin
+#      password: 123123
 
 #  servlet:
 #    multipart:
@@ -33,6 +37,8 @@ mybatis-plus:
 files:
   upload:
     path: D:/SRTP/carbon-srtp/Java/data/
+#    path: home/files
+
 
 #jasypt:
 #  encryptor:
