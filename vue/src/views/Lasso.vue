@@ -47,21 +47,17 @@
 
       <div v-if="stepOneVif">自动生成的alpha取值为:{{result1}}</div>
       <div v-if="stepTwoVif">Lasso回归分析评分:{{result2}}</div>
-      <div v-if="stepThreeVif">相关系数:{{result3}}</div>
+      <div v-if="stepThreeVif">
+        <div>相关系数:{{result3}}</div>
+        <div>相关因素为:{{result4}}</div>
+      </div>
+
       <el-image v-if="stepPicVif" style="width:35%" :src="url"/>
 
 
-
-
-
-
     </el-card>
-
-
 </div>
-
 </template>
-
 
 <script>
 
@@ -75,6 +71,7 @@ export default {
       result1:{},
       result2:{},
       result3:{},
+      result4:{},
       url:'http://localhost:9090/picture/alpha.jpg',
       form:{},
       active:0,
@@ -94,6 +91,7 @@ export default {
           this.result1=response.data[3]
           this.result2=response.data[1]
           this.result3=response.data[2]
+          this.result4=response.data[4]
         if(this.active==0){
           this.stepThreeVif=false
           this.stepPicVif=true

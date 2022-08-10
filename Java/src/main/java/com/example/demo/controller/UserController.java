@@ -47,4 +47,16 @@ public class UserController {
         Page<User> userPage = userMapper.selectPage(new Page<>(pageNum, pageSize),wrapper);
         return Result.success(userPage);
     }
+
+    @PutMapping
+    public Result update(@RequestBody User user){
+        userMapper.updateById(user);
+        return Result.success();
+    }
+
+    @DeleteMapping("/{id}")
+    public Result update(@PathVariable Long id){
+        userMapper.deleteById(id);
+        return Result.success();
+    }
 }

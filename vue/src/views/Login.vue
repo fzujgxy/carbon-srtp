@@ -14,7 +14,7 @@
 
         <el-form-item label="验证码:" prop="code">
            <el-input style="width:50%;float:left;" v-model="form.code" placeholder="请输入验证码"></el-input>
-          <el-image style="width:50%;float:left;" :src="url" ></el-image>
+          <el-image style="width:50%;float:right;" :src="url" ></el-image>
 
         </el-form-item>
 
@@ -22,8 +22,8 @@
 
 
         <el-form-item style="margin-left:50px">
-        <el-button style="width: 40%;margin-left:35px" type="success" @click="$router.push('/register')">注 册</el-button>
-        <el-button style="width: 40%" type="primary" @click="login">登 录</el-button>
+          <el-button style="width: 40%;float:left" type="success" @click="$router.push('/register')">注 册</el-button>
+          <el-button style="width: 40%;float:right" type="primary" @click="login">登 录</el-button>
         </el-form-item>
       </el-form>
     </div>

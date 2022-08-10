@@ -54,7 +54,7 @@
 //    @Override
 //    protected void configure(HttpSecurity http) throws Exception {
 //        http.authorizeRequests() //开启登录认证
-//                .antMatchers("http://localhost:8081/register").hasRole("admin") //访问接口需要admin的角色
+//                .antMatchers("http://localhost:8081/backends").hasRole("admin") //访问接口需要admin的角色
 //                .antMatchers("/login").permitAll()
 //                .anyRequest().authenticated() // 其他所有的请求 只需要登录即可
 //                .and().formLogin()

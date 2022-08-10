@@ -96,6 +96,7 @@ def runlasso(Request):
 
     # 输出结果
     result = []
+    elementResult = []
     alphaResult = []
     finalResult = []
     dataResult = []
@@ -111,6 +112,10 @@ def runlasso(Request):
     for i in range(20):
         alphaResult.append(lasso_.alphas_[i])
 
+    for i in range(x_value.shape[1] - 1):
+        if lasso_.coef_[i] != 0:
+            elementResult.append(x_value.columns.values[i])
+
     # [0]
     result.append(finalResult)
 
@@ -123,4 +128,6 @@ def runlasso(Request):
     # [3]
     result.append(alphaResult)
 
+    # [4]
+    result.append(elementResult)
     return JsonResponse(result, safe=False)
