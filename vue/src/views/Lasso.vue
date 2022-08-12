@@ -66,6 +66,7 @@ import request from "@/utils/request";
 
 
 export default {
+  name:"Lasso",
   data(){
     return{
       result1:{},

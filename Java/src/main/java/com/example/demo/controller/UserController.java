@@ -38,7 +38,7 @@ public class UserController {
         if (res == null){
             return Result.error("400","账号或密码错误");
         }
-        return Result.success();
+        return Result.success(user);
     }
 
     @GetMapping("/page")

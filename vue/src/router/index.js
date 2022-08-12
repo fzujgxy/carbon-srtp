@@ -4,12 +4,12 @@ import Layout from '../layout/Layout.vue'
 const routes = [
   {
     path: '/',
-    name: 'Login',
-    redirect:"/login",
+    name: 'Main',
+    redirect:"/main",
     children:[{
-      path:"/login",
-      name:'Login',
-      component:() => import("@/views/Login"),
+      path:"/main",
+      name:'Main',
+      component:() => import("@/views/Main"),
     }]
 
   },
@@ -28,12 +28,11 @@ const routes = [
       name:'Ebrb',
       component:() => import("@/views/Ebrb"),
     },
-
     {
-        path:'/backends',
+      path:'/backends',
       name:'Backends',
       component:() => import("@/views/Backends"),
-      }
+      },
     ]
   },
   {
@@ -42,7 +41,6 @@ const routes = [
     component:() => import("@/views/Register"),
 
   },
-
 ]
 
 const router = createRouter({

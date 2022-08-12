@@ -1,5 +1,5 @@
 <template>
-  <div style="width:100%;height:100%;background-color:darkslateblue;position:fixed">
+  <div style="width:100%;height:100%;background-color:#FFC0CB;position:fixed">
     <div style="width:400px;margin:50px auto">
       <div style="color:#cccccc;margin-left:50px;font-size:30px;text-align:center;padding:30px">欢迎注册</div>
       <el-form ref="form" :model="form" size="large" :rules="rules" label-width="100px">

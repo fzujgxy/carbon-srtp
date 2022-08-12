@@ -9,13 +9,14 @@
     <div style="width:auto;text-align: center">
 
       <el-dropdown>
-      <el-button type="primary" size="large">HarryGao<el-icon class="el-icon--right"><arrow-down /></el-icon>
-      </el-button>
+        <span class="el-dropdown-link">
+          {{user.username}}<i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+
       <template #dropdown>
         <el-dropdown-menu>
-          <el-dropdown-item>个人信息</el-dropdown-item>
+          <el-dropdown-item @click="$router.push('/person')">个人信息</el-dropdown-item>
           <el-dropdown-item @click="$router.push('/')">退出系统</el-dropdown-item>
-
         </el-dropdown-menu>
       </template>
     </el-dropdown>
@@ -31,10 +32,11 @@ export default {
   name: "Head",
   data(){
     return {
+      user:{},
       url:'http://localhost:9090/picture/logo.jpg',
     }
   },
-  methods: {}
+  methods: {},
 }
 </script>
 
