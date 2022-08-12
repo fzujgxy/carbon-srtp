@@ -5,14 +5,12 @@
 
   <div style="flex: 1"></div>
 
-    <!--下拉框-->
-    <div style="width:auto;text-align: center">
+  <!--下拉框-->
+    <div style="width:auto;text-align: center;margin:5px 0">
 
       <el-dropdown>
-        <span class="el-dropdown-link">
-          {{user.username}}<i class="el-icon-arrow-down el-icon--right"></i>
-        </span>
-
+      <el-button text size="large" style="font-size:20px;color:black">{{nickname}}<el-icon class="el-icon--right"><arrow-down /></el-icon>
+      </el-button>
       <template #dropdown>
         <el-dropdown-menu>
           <el-dropdown-item @click="$router.push('/person')">个人信息</el-dropdown-item>
@@ -22,18 +20,18 @@
     </el-dropdown>
     </div>
   </div>
-
 </template>
 
 <script>
 import request from "@/utils/request";
 
+
 export default {
   name: "Head",
   data(){
     return {
-      user:{},
       url:'http://localhost:9090/picture/logo.jpg',
+      nickname:JSON.parse(sessionStorage.getItem("user")).username,
     }
   },
   methods: {},

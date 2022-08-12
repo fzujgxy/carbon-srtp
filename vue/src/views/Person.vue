@@ -42,12 +42,11 @@ export default {
   data(){
     return{
       form:{},
-      user:{},
     }
   },
 
   created(){
-    let str = sessionStorage.getItem("user") || "{"
+    let str = sessionStorage.getItem("user") || "{}"
     this.form = JSON.parse(str)
   },
 

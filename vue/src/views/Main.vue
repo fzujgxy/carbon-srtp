@@ -37,12 +37,19 @@
          <div style="color:#00CDCD;font-size:30px;padding:50px 0">欢迎使用Lasso分析模型</div>
          <el-form ref="form" :model="form" size="large" :rules="rules" label-width="150px">
 
-          <el-form-item label="账号:" prop="phone">
-            <el-input style="width:70%" v-model="form.phone"></el-input>
+          <el-form-item prop="phone">
+            <el-input :prefix-icon="Avatar" style="width:70%" v-model="form.phone" placeholder="请输入账号"></el-input>
           </el-form-item>
 
-          <el-form-item label="密码:" prop="password">
-            <el-input style="width:70%" v-model="form.password" show-password></el-input>
+          <el-form-item prop="password">
+            <el-input :prefix-icon="Lock" style="width:70%" v-model="form.password" show-password placeholder="请输入密码"></el-input>
+          </el-form-item>
+
+          <el-form-item>
+            <div style="display:flex">
+              <el-input :prefix-icon="Key" style="width:50%" v-model="form.validCode" placeholder="请输入验证码"></el-input>
+              <ValidCode @input="createValidCode" />
+            </div>
           </el-form-item>
 
      </el-form>
@@ -84,13 +91,18 @@
 
 <script>
 import request from "@/utils/request";
+import {Avatar,Lock,Key} from "@element-plus/icons-vue";
+import ValidCode from "@/components/ValidCode";
 
 export default {
   name: "Main",
+  components:{
+    ValidCode
+  },
   data(){
     return{
+      validCode:'',
       dialogVisible:false,
-      user:{},
       logo:'http://localhost:9090/picture/logo.jpg',
       form:{},
       rules:{
@@ -99,26 +111,46 @@ export default {
       }
     }
   },
+  setup(){
+    return{
+      Avatar,
+      Lock,
+      Key
+    }
+  },
   methods:{
     aboutUs(){
       this.dialogVisible = true
     },
 
+    // 接收验证码组件提交的4位验证码
+    createValidCode(data){
+      this.validCode = data
+    },
+
     login(){
       this.$refs['form'].validate((valid) =>{
         if(valid){
+          if(!this.form.validCode){
+            this.$message.error("请填写验证码")
+            return
+          }
+          if(this.form.validCode.toLowerCase()!==this.validCode.toLowerCase()){
+            this.$message.error("验证码错误")
+            return
+          }
           request.post("http://localhost:9090/user/login",this.form).then(res=>{
-          if(res.code === '200'){
-            this.$message({
-              type:"success",
-              message:"登陆成功"
-            })
-            sessionStorage.setItem("user",JSON.stringify(res.data))
-            this.$router.push("/lasso") //登录成功之后页面跳转至lasso
-          }else {
-           this.$message({
-              type: "error",
-              message: res.msg
+            if(res.code === '200'){
+              this.$message({
+                type:"success",
+                message:"登陆成功"
+              })
+              sessionStorage.setItem("user",JSON.stringify(res.data))
+              this.$router.push("/lasso") //登录成功之后页面跳转至lasso
+            }else {
+              this.$message({
+                type: "error",
+                message: res.msg
               })
             }
           })

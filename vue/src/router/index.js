@@ -33,6 +33,11 @@ const routes = [
       name:'Backends',
       component:() => import("@/views/Backends"),
       },
+    {
+      path:'/person',
+      name:'Person',
+      component:() => import("@/views/Person"),
+      },
     ]
   },
   {
