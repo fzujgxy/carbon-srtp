@@ -91,7 +91,6 @@ export default {
     return{
       dialogVisible:false,
       user:{},
-      url:'http://localhost:9090/login/getCode',
       logo:'http://localhost:9090/picture/logo.jpg',
       form:{},
       rules:{
