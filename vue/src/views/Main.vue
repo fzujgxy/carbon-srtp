@@ -14,7 +14,7 @@
               <div style="font-size:18px;margin:10px 0">吴海东&nbsp&nbsp工程师</div>
               <div style="font-weight: bold;font-size:22px;margin:10px 0">团队成员</div>
               <div style="font-size:18px;margin:10px 0">潘丽梅</div>
-              <div style="font-size:18px;margin:10px 0">徐可盈</div>
+              <div style="font-size:18px;margin:10px 0">徐可楹</div>
               <div style="font-size:18px;margin:10px 0">李裕普</div>
               <div style="font-size:18px;margin:10px 0">王士萌</div>
               <div style="font-size:18px;margin:10px 0">高奕人</div>
@@ -77,7 +77,7 @@
         </el-main>
       </el-container>
 
-        <el-footer style="margin:-100px auto">
+        <el-footer style="margin:-10% auto">
           <div>
             <div style="font-weight: bold;font-size:25px;color:#FFE4E1">友情链接</div>
             <el-link href="https://www.fzu.edu.cn/" style="font-weight: bold;font-size:20px;color:#FFE4E1">福州大学&nbsp&nbsp&nbsp&nbsp</el-link>
