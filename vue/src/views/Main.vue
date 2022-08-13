@@ -33,7 +33,7 @@
       <div class="background">
       <el-container >
         <el-main>
-         <el-card  style="width:500px;margin:150px auto;margin-right:0px; background:rgba(0,0,0,0.5);">
+         <el-card  style="width:500px;margin:100px auto;margin-right:0px; background:rgba(0,0,0,0.5);">
          <div style="color:#00CDCD;font-size:30px;padding:50px 0">欢迎使用Lasso分析模型</div>
          <el-form ref="form" :model="form" size="large" :rules="rules" label-width="150px">
 
@@ -77,7 +77,7 @@
         </el-main>
       </el-container>
 
-        <el-footer style="margin:-10% auto">
+        <el-footer style="margin:-5% auto">
           <div>
             <div style="font-weight: bold;font-size:25px;color:#FFE4E1">友情链接</div>
             <el-link href="https://www.fzu.edu.cn/" style="font-weight: bold;font-size:20px;color:#FFE4E1">福州大学&nbsp&nbsp&nbsp&nbsp</el-link>
@@ -93,7 +93,6 @@
 import request from "@/utils/request";
 import {Avatar,Lock,Key} from "@element-plus/icons-vue";
 import ValidCode from "@/components/ValidCode";
-
 export default {
   name: "Main",
   components:{
@@ -122,12 +121,10 @@ export default {
     aboutUs(){
       this.dialogVisible = true
     },
-
     // 接收验证码组件提交的4位验证码
     createValidCode(data){
       this.validCode = data
     },
-
     login(){
       this.$refs['form'].validate((valid) =>{
         if(valid){
@@ -164,7 +161,6 @@ export default {
 <style scoped>
 .background{
   background:url("../assets/background.png");
-  /*background-color: pink;*/
   width: 100%;
   height: 100%;
   position:fixed;
@@ -172,4 +168,5 @@ export default {
   margin-left: -0px;/*左边距*/
   background-size:100% 100%;
 }
+
 </style>

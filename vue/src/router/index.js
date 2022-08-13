@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Layout from '../layout/Layout.vue'
 
+
+
 const routes = [
   {
     path: '/',
@@ -44,10 +46,14 @@ const routes = [
     path:'/register',
     name:'Register',
     component:() => import("@/views/Register"),
-
   },
-]
+  {
+    path:'/:pathMatch(.*)',
+    name:'NotFound',
+    component:() => import("@/views/NotFound"),
+  },
 
+]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
@@ -55,3 +61,4 @@ const router = createRouter({
 
 
 export default router
+
