@@ -1,7 +1,7 @@
 <template>
   <div style="height:50px;line-height: 50px;border-bottom:1px solid #ccc;display:flex">
   <div style="width: 200px;font-weight: bold;color: dodgerblue;font-size:25px">FzuJGXY</div>
-  <el-image :src="url"/>
+  <el-image :src="url" style="width:300px;height:50px"/>
 
   <div style="flex: 1"></div>
 
@@ -30,7 +30,7 @@ export default {
   name: "Head",
   data(){
     return {
-      url:'http://localhost:9090/picture/logo.jpg',
+      url:'http://localhost:9090/picture/logo.png',
       nickname:JSON.parse(sessionStorage.getItem("user")).username,
     }
   },
