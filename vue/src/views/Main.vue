@@ -61,21 +61,31 @@
         </el-card>
         </el-main>
 
-        <el-main>
-          <el-card style="width:700px;margin:100px auto;margin-left:100px;background:rgba(0,0,0,0.5);">
-            <div style="font-weight: bold;font-size:25px;margin:10px 0;color:#B0C4DE">LASSO的基本模型</div>
-            <div style="font-weight: bold;font-size:20px;margin:10px 0;color:#B0C4DE">一、模型构造依据</div>
-            <div style="font-weight: bold;font-size:15px;float:left;margin:10px 0;color:#B0C4DE">由于数据维度多，指标之间存在线性相关关系的问题，我们选用LASSO回归模型进行指标筛选。即回归拟合后的误差和系数的绝对值之和。将其用于庞大指标数据下特征选择，进而突出重点指标。</div>
-            <div style="font-weight: bold;font-size:20px;margin:10px 0;color:#B0C4DE">二、LASSO代码实现:</div>
-            <div style="font-weight: bold;font-size:18px;float:left;margin:10px 0;color:#B0C4DE">2.1 选择最优正则化参数</div>
-            <div style="font-weight: bold;font-size:15px;float:left;margin:7px 0;color:#B0C4DE">首先调用python机器学习库中的sklearn.linear_model模块里的LASSO类并导入碳排放相关指标数据集，之后进行正则化参数lambda（λ）的选择（默认为1.0），在此选用交叉验证的方式选择均方误差最小的正则化参数λ,也即选择最优的λ值。</div>
-            <div style="font-weight: bold;font-size:18px;float:left;margin:10px 0;color:#B0C4DE">2.2 筛选相关特征</div>
-            <div style="font-weight: bold;font-size:15px;float:left;margin:7px 0;margin-bottom:50px;color:#B0C4DE">结合2.1得到的正则化参数，正则化参数越大对变量较多的线性模型的惩罚力度就越大，从而最终获得一个变量较少的模型。剔除系数被压缩为0的指标数据，即筛选出剩下的显著的变量</div>
-
+        <el-main style="margin-right:40px;margin-bottom:10px;">
+          <!-- <el-main style="height:10;flex-grow:10;"></el-main> -->
+          <el-card  style="width:700px;margin:100px auto;margin-left:120px;background:rgba(0,0,0,0.5);">
+            <div style="font-weight: bold;font-size:25px;margin:8px 0;color:#00CDCD">LASSO简介</div>
+            <div style="font-weight: bold;font-size:16px;float:left;margin:10px 0;color:#00CDCD">LASSO常用于数据维度多，指标之间存在线性相关关系的问题，能够很好地进行指标筛选。将其用于庞大指标数据下特征选择，进而突出重点指标。</div>
+            <div style="font-weight: bold;font-size:25px;margin:8px 0;color:#00CDCD">EBRB的基本模型</div>
+            <div style="font-weight: bold;font-size:20px;margin:8px 0;color:#00CDCD">1、模型介绍</div>
+            <div style="font-weight: bold;font-size:16px;float:left;margin:10px 0;color:#00CDCD">EBRB模型是一种基于规则的专家系统,因其具有高效的规则生成和推理过程,以及理想的决策准确性,EBRB模型已被广泛用于桥梁风险评估、输油管道检测和消费者偏好等实际问题中。</div>
+            <div style="font-weight: bold;font-size:20px;margin:8px 0;color:#00CDCD">2、EBRB规则表示:</div>
+            <!-- <div style="font-weight: bold;font-size:18px;float:left;margin:10px 0;color:#B0C4DE">2.1 选择最优正则化参数</div> -->
+            <div style="font-weight: bold;font-size:16px;float:left;margin:5px 0;color:#00CDCD">当EBRB模型应用于预测时，EBRB中的第k(k=1,2,…,L)条规则可以表示为<br>R<sub>k</sub>:<em>IFU</em><sub>1</sub>is{(A<sub>1,j</sub>,α<sup>k</sup><sub>1,j</sub>);j=1,2,…,J<sub>i</sub>}∧…∧U<sub>M</sub>is{（A<sub>M,j</sub>,α<sup>k</sup><sub>M,j</sub>);j=1,2,…,J<sub>M</sub>},THEN D is<br>{(D<sub>n</sub>,β<sup>k</sup><sub>n</sub>);n=1,2,…,N},with θ<sub>k</sub> and {δ<sub>1</sub>,δ<sub>2</sub>,…,δ<sub>M</sub>},</div>
+            <div style="font-weight: bold;font-size:16px;float:left;margin:5px 0;margin-bottom:50px;color:#00CDCD">上式中{(A<sub>1,j</sub>,α<sup>k</sup><sub>1,j</sub>);j=1,2,…,J<sub>i</sub>}和{(D<sub>n</sub>,β<sup>k</sup><sub>n</sub>);n=1,2,…,N}分别表示第i个输入指标U<sub>i</sub>和输入指标D的置信框架;α<sup>k</sup><sub>i,j</sub>和β<sup>k</sup><sub>n</sub>分别表示第k条规则中评价等级A<sub>i,j</sub>和D<sub>n</sub>的置信度;θ<sub>k</sub>表示第k条规则的规则权重;δ<sub>i</sub>表示第i个输入指标的指标权重。</div>
+            <!-- <div style="font-weight: bold;font-size:15px;float:left;margin:7px 0;color:#B0C4DE">首先调用python机器学习库中的sklearn.linear_model模块里的LASSO类并导入碳排放相关指标数据集，之后进行正则化参数lambda（λ）的选择（默认为1.0），在此选用交叉验证的方式选择均方误差最小的正则化参数λ,也即选择最优的λ值。</div> -->
+            <!-- <div style="font-weight: bold;font-size:18px;float:left;margin:10px 0;color:#B0C4DE">2.2 筛选相关特征</div> -->
+            <!-- <div style="font-weight: bold;font-size:15px;float:left;margin:7px 0;margin-bottom:50px;color:#B0C4DE">结合2.1得到的正则化参数，正则化参数越大对变量较多的线性模型的惩罚力度就越大，从而最终获得一个变量较少的模型。剔除系数被压缩为0的指标数据，即筛选出剩下的显著的变量</div> -->
+       
 
           </el-card>
         </el-main>
       </el-container>
+
+
+
+
+
 
         <el-footer style="margin:-5% auto">
           <div>
@@ -88,6 +98,8 @@
       </div>
       </el-container>
 </template>
+
+
 
 <script>
 import request from "@/utils/request";
@@ -125,6 +137,12 @@ export default {
     createValidCode(data){
       this.validCode = data
     },
+
+
+
+
+
+
     login(){
       this.$refs['form'].validate((valid) =>{
         if(valid){
@@ -164,9 +182,10 @@ export default {
   width: 100%;
   height: 100%;
   position:fixed;
-  margin-top: 5%;/*上边距*/
+  margin-top: 3%;/*上边距*/
   margin-left: -0px;/*左边距*/
   background-size:100% 100%;
 }
+
 
 </style>
