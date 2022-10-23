@@ -61,7 +61,7 @@
         </el-card>
         </el-main>
 
-        <el-main style="margin-right:40px;margin-bottom:10px;">
+        <el-main style="margin-right:20px;margin-bottom:10px;">
           <!-- <el-main style="height:10;flex-grow:10;"></el-main> -->
           <el-card  style="width:700px;margin:100px auto;margin-left:120px;background:rgba(0,0,0,0.5);">
             <div style="font-weight: bold;font-size:25px;margin:8px 0;color:#00CDCD">LASSO简介</div>
