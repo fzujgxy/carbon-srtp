@@ -16,12 +16,13 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from lasso_model import views
-
+from lasso_model import views as lassoView
+from brb_model import views as brbView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('lasso', views.runlasso),
+    path('lasso/', lassoView.runlasso),
+    path('ebrb/', brbView.runEbrb),
 ]
 
 

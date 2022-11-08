@@ -1,7 +1,7 @@
 <template>
   <div style="width:100%;height:100%;background-color:#FFC0CB;position:fixed">
     <div style="width:400px;margin:50px auto">
-      <div style="color:#cccccc;margin-left:50px;font-size:30px;text-align:center;padding:30px">欢迎注册</div>
+      <div style="color:purple;margin-left:50px;font-size:30px;text-align:center;padding:30px">欢迎注册</div>
       <el-form ref="form" :model="form" size="large" :rules="rules" label-width="100px">
 
             <el-form-item label="用户名" prop="username">
@@ -81,7 +81,7 @@ name: "Register",
                 type: "success",
                 message: "注册成功"
               })
-              this.$router.push("/login")
+              this.$router.push("/main")
             } else {
               this.$message({
                 type: "error",

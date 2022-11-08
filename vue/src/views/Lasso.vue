@@ -3,7 +3,7 @@
     <el-upload
       class="upload-demo"
       drag
-      action="http://localhost:9090/upload/files"
+      action="http://localhost:9090/upload/files/datas"
       name="files"
       accept=".xlsx"
     >
@@ -23,14 +23,13 @@
 
 
   <el-steps :active="active" align-center style="margin-top:10px">
-
     <el-step title="最优alpha图"/>
     <el-step title="自动生成的alpha取值"/>
     <el-step title="Lasso回归分析评分"/>
     <el-step title="相关系数"/>
-
-
   </el-steps>
+
+
   <el-button @click="next">Next step</el-button>
 
 
@@ -38,8 +37,6 @@
       <template #header>
           <span style="font-size:25px">Result</span>
       </template>
-
-
 
       <div v-if="stepOneVif">自动生成的alpha取值为:{{result1}}</div>
       <div v-if="stepTwoVif">Lasso回归分析评分:{{result2}}</div>
@@ -50,9 +47,8 @@
 
       <el-image v-if="stepPicVif" style="width:35%" :src="url"/>
 
-
     </el-card>
-</div>
+  </div>
 </template>
 
 <script>

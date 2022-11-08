@@ -31,10 +31,10 @@ public class FileController {
     private String fileUploadPath;
 
 
-    //    @PostMapping("/upload")
+//    @PostMapping("/upload")
 //    public Result upload(String type,@RequestParam MultipartFile novel,@RequestParam MultipartFile brief,@RequestParam MultipartFile picture) throws IOException {
-    @PostMapping("/files")
-    public Result upload( @RequestParam MultipartFile files) throws IOException {
+    @PostMapping("/files/{fileName}")
+    public Result upload( @RequestParam MultipartFile files,@PathVariable String fileName) throws IOException {
 
         String originalNovelName = files.getOriginalFilename();
         String filesType = FileUtil.extName(originalNovelName);
@@ -49,7 +49,7 @@ public class FileController {
         }
 
         //定义一个文件唯一的标识码
-        String names = "datas" + StrUtil.DOT + filesType;
+        String names = "{fileName}" + StrUtil.DOT + filesType;
         File uploadFile = new File(fileUploadPath + names);
 
         //把获取后的文件存储到磁盘目录

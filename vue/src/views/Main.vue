@@ -8,7 +8,7 @@
 
               <el-dialog v-model="dialogVisible" title="成员组成" width="30%" :before-close="handleClose">
 
-                <span slot="title" style="font-size=20px"></span>
+                <span slot="title" style="font-size:20px"></span>
               <div style="font-weight: bold;font-size:22px;margin:10px 0">指导老师</div>
               <div style="font-size:18px;margin:10px 0">杨隆浩&nbsp&nbsp副教授</div>
               <div style="font-size:18px;margin:10px 0">吴海东&nbsp&nbsp工程师</div>
@@ -61,9 +61,8 @@
         </el-card>
         </el-main>
 
-        <el-main style="margin-right:20px;margin-bottom:10px;">
-          <!-- <el-main style="height:10;flex-grow:10;"></el-main> -->
-          <el-card  style="width:700px;margin:100px auto;margin-left:120px;background:rgba(0,0,0,0.5);">
+        <el-main>
+           <el-card  style="width:700px;margin:80px auto;margin-left:100px;background:rgba(0,0,0,0.5);">
             <div style="font-weight: bold;font-size:25px;margin:8px 0;color:#00CDCD">LASSO简介</div>
             <div style="font-weight: bold;font-size:16px;float:left;margin:10px 0;color:#00CDCD">LASSO常用于数据维度多，指标之间存在线性相关关系的问题，能够很好地进行指标筛选。将其用于庞大指标数据下特征选择，进而突出重点指标。</div>
             <div style="font-weight: bold;font-size:25px;margin:8px 0;color:#00CDCD">EBRB的基本模型</div>
@@ -76,16 +75,11 @@
             <!-- <div style="font-weight: bold;font-size:15px;float:left;margin:7px 0;color:#B0C4DE">首先调用python机器学习库中的sklearn.linear_model模块里的LASSO类并导入碳排放相关指标数据集，之后进行正则化参数lambda（λ）的选择（默认为1.0），在此选用交叉验证的方式选择均方误差最小的正则化参数λ,也即选择最优的λ值。</div> -->
             <!-- <div style="font-weight: bold;font-size:18px;float:left;margin:10px 0;color:#B0C4DE">2.2 筛选相关特征</div> -->
             <!-- <div style="font-weight: bold;font-size:15px;float:left;margin:7px 0;margin-bottom:50px;color:#B0C4DE">结合2.1得到的正则化参数，正则化参数越大对变量较多的线性模型的惩罚力度就越大，从而最终获得一个变量较少的模型。剔除系数被压缩为0的指标数据，即筛选出剩下的显著的变量</div> -->
-       
+
 
           </el-card>
         </el-main>
       </el-container>
-
-
-
-
-
 
         <el-footer style="margin:-5% auto">
           <div>
@@ -98,8 +92,6 @@
       </div>
       </el-container>
 </template>
-
-
 
 <script>
 import request from "@/utils/request";
@@ -137,12 +129,6 @@ export default {
     createValidCode(data){
       this.validCode = data
     },
-
-
-
-
-
-
     login(){
       this.$refs['form'].validate((valid) =>{
         if(valid){
@@ -182,10 +168,9 @@ export default {
   width: 100%;
   height: 100%;
   position:fixed;
-  margin-top: 3%;/*上边距*/
+  margin-top: 5%;/*上边距*/
   margin-left: -0px;/*左边距*/
   background-size:100% 100%;
 }
-
 
 </style>

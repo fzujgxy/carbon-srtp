@@ -38,7 +38,7 @@
          >
        </el-pagination>
 
-      <el-dialog title="添加新用户" v-model="dialogVisible" width="30%">
+      <el-dialog title="修改信息" v-model="dialogVisible" width="30%">
         <el-form :model="form" label-width="120px">
            <el-form-item label="用户名" prop="username">
               <el-input v-model="form.username" style="width:80%" clearable/>
