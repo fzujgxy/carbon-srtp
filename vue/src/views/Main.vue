@@ -1,7 +1,7 @@
 <template>
     <el-container>
         <el-header style="height:78px;border-bottom:1px solid #ccc;display:flex">
-          <el-image :src="logo" style="width:300px;height:50px;margin:10px auto"/>
+          <el-image :src="logo" style="margin-left:10px"/>
           <div style="flex: 1"></div>
             <div style="width:auto;text-align: center">
               <el-button size="large" text  style="color:#626aef;font-weight: bold;width:100px;height:60px;margin:10px;font-size:20px" @click="aboutUs">关于我们</el-button>
